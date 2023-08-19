@@ -1,4 +1,7 @@
-﻿namespace EHR365.WebApi.Extensions
+﻿using EHR365.Application.Contracts;
+using EHR365.LoggerServices;
+
+namespace EHR365.WebApi.Extensions
 {
     public static class ServiceExtensions
     {
@@ -10,10 +13,13 @@
                 .AllowAnyMethod()
                 .AllowAnyHeader());
             });
-        
-        public static void ConfigureIISIntegration(this IServiceCollection services)
-        {
+
+        public static void ConfigureIISIntegration(this IServiceCollection services) => 
             services.Configure<IISOptions>(options => { });
+        
+        public static void ConfigureLoggerService(this IServiceCollection services)
+        {
+            services.AddSingleton<ILoggerManager, LoggerManager>();
         }
     }
 }
