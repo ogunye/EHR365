@@ -22,7 +22,7 @@ namespace EHR365.Domain.Entities
 
         [ForeignKey(nameof(Staff))]
         public Guid StaffId { get; set; }
-        public Staff? Staff { get; set; }
+        public HosptialStaff? Staff { get; set; }
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]

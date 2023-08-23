@@ -1,13 +1,15 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EHR365.Domain.Entities
 {
     public class BedInWard
     {
+        [Key]
         public int BedId { get; set; }
-        [ForeignKey(nameof(Ward))]
-        public Guid WardId { get; set; }
 
+        [ForeignKey(nameof(Ward))]
+        public int WardId { get; set; }
         public Ward? Ward { get; set; }
 
         public int BedNumber { get; set; }

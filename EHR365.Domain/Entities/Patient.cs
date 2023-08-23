@@ -10,12 +10,7 @@ using System.Threading.Tasks;
 namespace EHR365.Domain.Entities
 {
     public class Patient : AuditableBaseEntity
-    {
-        [ForeignKey(nameof(Address))]
-        public Guid AddressId { get; set; }
-
-
-
+    {       
         [Required(ErrorMessage = "Patient Number is a required field.")]
         [MaxLength(8, ErrorMessage = "Maximum length of First Name is 8.")]
         public string PatientNumber { get; set; } = string.Empty;
@@ -42,11 +37,15 @@ namespace EHR365.Domain.Entities
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; } = string.Empty;
 
+        [ForeignKey("Address")]
         public Address? PatientAddress { get; set; }
         public ICollection<MedicalRecord>? MedicalRecords { get; set; }
         public ICollection<PatientDrugPrescription>? DrugTreatments { get; set; }
         public ICollection<PatientVitals>? Vitals { get; set; }
         public ICollection<Appointment>? DoctorAppointments { get; set; }
+
+        [ForeignKey(nameof(PatientInBed))]
+        public Guid PatientInBedId {  get; set; }
         public PatientInBed? BedAssignment { get; set; }
     }
 }

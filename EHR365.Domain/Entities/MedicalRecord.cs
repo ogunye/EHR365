@@ -10,11 +10,13 @@ namespace EHR365.Domain.Entities
 {
     public class MedicalRecord : AuditableBaseEntity
     {
-        [ForeignKey(nameof(Patient))]
-        public Guid PatentId { get; set; }
+        [ForeignKey("PatientId")]
         public Patient? Patient { get; set; }
 
+        [ForeignKey("DiagnoseId")]
         public Diagnoses? Diagnoses { get; set; }
+
+        [ForeignKey("SurgicalHistoryId")]
         public SurgicalHistory? SurgicalHistory { get; set; }
     }
 }

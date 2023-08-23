@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EHR365.Domain.Common;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -8,13 +9,12 @@ using System.Threading.Tasks;
 
 namespace EHR365.Domain.Entities
 {
-    public class PatientVitals
+    public class PatientVitals :AuditableBaseEntity
     {
         [ForeignKey(nameof(Patient))]
         public Guid PatientId { get; set; }
+        public Patient? Patient { get; set; }   
 
-        public Patient? Patient { get; set; }       
-        public Hospital? Hospital { get; set; }
         public DateTime? RecordCreated { get; set; } = DateTime.Now;
         public int? HeartRate { get; set; }
 

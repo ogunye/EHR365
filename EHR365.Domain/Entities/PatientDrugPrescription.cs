@@ -14,6 +14,9 @@ namespace EHR365.Domain.Entities
         [ForeignKey(nameof(Patient))]
         public Guid PatientId { get; set; }
         public Patient? Patient { get; set; }
+
+        [ForeignKey(nameof(Drugs))]
+        public int DrugsId { get; set; }
         public Drugs? Drug { get; set; }
 
         [MaxLength(10, ErrorMessage ="Maximum length for Dosage is 10.")]

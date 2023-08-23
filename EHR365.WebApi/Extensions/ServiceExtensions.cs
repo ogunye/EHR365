@@ -21,5 +21,7 @@ namespace EHR365.WebApi.Extensions
         {
             services.AddSingleton<ILoggerManager, LoggerManager>();
         }
+        
+
     }
 }

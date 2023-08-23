@@ -11,10 +11,10 @@ namespace EHR365.Domain.Entities
         public Guid PatientId { get; set; }
         public Patient? Patient { get; set; }
 
-        [ForeignKey(nameof(Staff))]
+        [ForeignKey(nameof(HosptialStaff))]
         public Guid StaffId { get; set; }
 
-        public Staff? DiagonsisDoctor { get; set; }
+        public HosptialStaff? AssignedStaff { get; set; }
 
         [Required(ErrorMessage ="Diagnoses is a required field.")]
         [MaxLength(200, ErrorMessage = "Maximum length for Diagnosis Name is 200")]
