@@ -396,3 +396,4 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/EHR365.Domain/Entities/PatientDrugTreatment.cs

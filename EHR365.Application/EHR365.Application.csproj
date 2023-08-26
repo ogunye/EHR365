@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\EHR365.Domain\EHR365.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

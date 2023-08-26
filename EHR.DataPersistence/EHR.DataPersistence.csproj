@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\EHR365.Application\EHR365.Application.csproj" />
     <ProjectReference Include="..\EHR365.Domain\EHR365.Domain.csproj" />
   </ItemGroup>
 
