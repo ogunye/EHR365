@@ -18,6 +18,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EHR.DataPersistence\EHR.DataPersistence.csproj" />
+    <ProjectReference Include="..\EHR.Service.Contractds\EHR.Service.Contractds.csproj" />
+    <ProjectReference Include="..\EHR.Services\EHR.Services.csproj" />
     <ProjectReference Include="..\EHR365.LoggerServices\EHR365.LoggerServices.csproj" />
   </ItemGroup>
 

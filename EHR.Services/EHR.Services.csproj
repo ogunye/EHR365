@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EHR.Service.Contractds\EHR.Service.Contractds.csproj" />
+    <ProjectReference Include="..\EHR365.Application\EHR365.Application.csproj" />
+  </ItemGroup>
+
+</Project>
