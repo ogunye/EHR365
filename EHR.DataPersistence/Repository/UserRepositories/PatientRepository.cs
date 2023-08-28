@@ -1,6 +1,7 @@
 ﻿using EHR.DataPersistence.Context;
 using EHR365.Application.Contracts;
 using EHR365.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,24 +16,16 @@ namespace EHR.DataPersistence.Repository.UserRepositories
         {
         }
 
-        public Patient CreatePatient(Patient patient)
-        {
-            throw new NotImplementedException();
-        }
+        public void CreatePatient(Patient patient) => Create(patient);
 
-        public Patient DeletePatient(Patient patient)
-        {
-            throw new NotImplementedException();
-        }
+        public void DeletePatient(Patient patient) => Delete(patient);
 
-        public Task<IEnumerable<Patient>> GetAllPatientsAsync(bool trackChanges)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<IEnumerable<Patient>> GetAllPatientsAsync(bool trackChanges) => await FindAll(trackChanges)
+                .OrderBy(x => x.FirstName)
+                .ToListAsync();
 
-        public Task<Patient> GetPatientByPatientNumberAsync(string patientNumber, bool trackChanges)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<Patient> GetPatientByPatientNumberAsync(string patientNumber, bool trackChanges) =>
+            await FindByCondition(expression: c => c.PatientNumber == patientNumber, trackChanges: trackChanges)
+                .SingleOrDefaultAsync();
     }
 }

@@ -17,12 +17,14 @@ namespace EHR365.Domain.Entities
 
         [ForeignKey(nameof(Hospital))]
         public Guid HospitalId { get; set; }
-
         public Hospital? Hospital { get; set; }
 
-        [ForeignKey(nameof(Staff))]
-        public Guid StaffId { get; set; }
-        public HosptialStaff? Staff { get; set; }
+        [Required(ErrorMessage = "AppointmentWith is a required field.")]
+        [MaxLength(50, ErrorMessage = "Maximum length for AppointmentWith is 50")]
+        public string? AppointmentWith { get; set; } // Doctor, Dentist, Optician
+
+        [MaxLength(50, ErrorMessage = "Maximum length for Appointment Type is 50")]
+        public string? DoctorName { get; set; } //Name of Doctor
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
@@ -34,6 +36,6 @@ namespace EHR365.Domain.Entities
 
         [Required(ErrorMessage ="Appointment Type is a required field.")]
         [MaxLength(50, ErrorMessage ="Maximum length for Appointment Type is 50")]
-        public string? AppointmentType {  get; set;} //Check-up, Procedure
+        public string? AppointmentType {  get; set;} //Types: Check-up, Procedure
     }
 }

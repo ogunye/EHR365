@@ -11,7 +11,7 @@ namespace EHR365.Application.Contracts
     {
         Task<IEnumerable<Patient>> GetAllPatientsAsync(bool trackChanges);
         Task<Patient> GetPatientByPatientNumberAsync(string patientNumber, bool trackChanges);
-        Patient CreatePatient(Patient patient);
-        Patient DeletePatient(Patient patient); // implement soft delete 
+        void CreatePatient(Patient patient);
+        void DeletePatient(Patient patient); // implement soft delete 
     }
 }

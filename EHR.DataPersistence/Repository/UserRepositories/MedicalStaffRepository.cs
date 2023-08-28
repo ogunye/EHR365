@@ -1,6 +1,7 @@
 ﻿using EHR.DataPersistence.Context;
 using EHR365.Application.Contracts;
 using EHR365.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,22 +18,22 @@ namespace EHR.DataPersistence.Repository.UserRepositories
 
         public void CreateEmployeeForHosptial(Guid hosptialId, HosptialStaff employee)
         {
-            throw new NotImplementedException();
+            employee.HospitalId = hosptialId;
+            Create(employee);
         }
 
-        public void DeleteEmployeeForHosptial(HosptialStaff employee)
-        {
-            throw new NotImplementedException();
-        }
+        public void DeleteEmployeeForHosptial(HosptialStaff employee) => Delete(employee);
 
-        public Task<HosptialStaff> GetEmployeeAsync(Guid hospitalId, Guid employeeId, bool trackChanges)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<HosptialStaff> GetEmployeeAsync(Guid hospitalId, Guid employeeId, bool trackChanges) =>
+            await FindByCondition
+            (c => c.HospitalId.Equals(hospitalId) &&
+            c.Id.Equals(employeeId), trackChanges).SingleOrDefaultAsync();
 
-        public Task<IEnumerable<HosptialStaff>> GetEmployeesAsync(Guid hospitalId, bool trackChanges)
+
+        public async Task<IEnumerable<HosptialStaff>> GetEmployeesAsync(Guid hospitalId, bool trackChanges)
         {
-            throw new NotImplementedException();
+            return await FindByCondition(e => e.HospitalId.Equals(hospitalId), trackChanges)
+                .OrderBy(e => e.Id).ToListAsync();
         }
     }
 }

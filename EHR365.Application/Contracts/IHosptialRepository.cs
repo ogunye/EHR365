@@ -11,7 +11,7 @@ namespace EHR365.Application.Contracts
     {
         Task<IEnumerable<Hospital>> GetAllHosptialsAsync(bool trackChanges);
         Task<Hospital> GetHospitalAsync(Guid id, bool trackChanges);
-        Task<IEnumerable<Hospital>> GetByIdsAsync(IEnumerable<Guid> guids, bool trackChanges);
+        Task<IEnumerable<Hospital>> GetByIdsAsync(IEnumerable<Guid> ids, bool trackChanges);
         void CreateHospital(Hospital hospital);
         void DeleteHospitalAsync(Hospital hospital); //Implement soft delete
     }

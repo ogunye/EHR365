@@ -9,6 +9,11 @@ namespace EHR365.Domain.Entities
         [ForeignKey(nameof(Address))]
         public Guid AddresId { get; set; }
 
+        [ForeignKey(nameof(Hospital))]
+        public Guid HospitalId { get; set; }
+
+        public Hospital? Hospital { get; set; }
+
         [Required(ErrorMessage ="First Name is a required field.")]
         [MaxLength(30, ErrorMessage ="Maximum length of First Name is 30.")]
         public string? FirstName { get; set; }

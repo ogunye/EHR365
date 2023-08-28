@@ -14,7 +14,9 @@ builder.Services.ConfigureRepositroyManager();
 builder.Services.ConfigureServiceManager();
 builder.Services.ConfigureSQLManager(builder.Configuration);
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddApplicationPart(typeof(EHR.DataManager.AssemblyReference).Assembly);
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

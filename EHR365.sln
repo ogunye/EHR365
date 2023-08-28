@@ -23,6 +23,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EHR.Service.Contractds", "E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EHR.Services", "EHR.Services\EHR.Services.csproj", "{F1ED8D15-960A-43A2-B394-9651D9473BF9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EHR.DataManager", "EHR.DataManager\EHR.DataManager.csproj", "{2C59699E-A84A-4E3E-BF4E-97A274AA6434}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{F1ED8D15-960A-43A2-B394-9651D9473BF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1ED8D15-960A-43A2-B394-9651D9473BF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1ED8D15-960A-43A2-B394-9651D9473BF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C59699E-A84A-4E3E-BF4E-97A274AA6434}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C59699E-A84A-4E3E-BF4E-97A274AA6434}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C59699E-A84A-4E3E-BF4E-97A274AA6434}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C59699E-A84A-4E3E-BF4E-97A274AA6434}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,6 +75,7 @@ Global
 		{EB0F2524-A664-4C69-88E0-DF0EB6AEFB47} = {6A495B06-3D7A-4CBC-A687-415A998A34FB}
 		{00490C76-6BA1-40EE-9C47-4E007C4951EF} = {6A495B06-3D7A-4CBC-A687-415A998A34FB}
 		{F1ED8D15-960A-43A2-B394-9651D9473BF9} = {6A495B06-3D7A-4CBC-A687-415A998A34FB}
+		{2C59699E-A84A-4E3E-BF4E-97A274AA6434} = {EC67A953-5B79-43E2-BF57-CF8278528F22}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DD2D4F03-0AC8-4B01-8832-82477FE79F03}

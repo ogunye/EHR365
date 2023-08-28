@@ -13,7 +13,7 @@ namespace EHR365.Domain.Entities
     {
         [Required(ErrorMessage ="Hospital Name is a required field.")]
         [MaxLength(100, ErrorMessage ="Maximum length for Hosptial Name is 100")]
-        public string HopstialName { get; set; } = string.Empty;
+        public string HospitalName { get; set; } = string.Empty;
 
         [ForeignKey(nameof(Address))]
         public Guid AddressId { get; set; }
