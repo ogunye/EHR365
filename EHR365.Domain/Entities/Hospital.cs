@@ -17,6 +17,6 @@ namespace EHR365.Domain.Entities
 
         [ForeignKey(nameof(Address))]
         public Guid AddressId { get; set; }
-        public Address? HospitalAddress { get; set; }
+        public virtual Address? HospitalAddress { get; set; }
     }
 }

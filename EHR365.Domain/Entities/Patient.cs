@@ -38,14 +38,14 @@ namespace EHR365.Domain.Entities
         public string Email { get; set; } = string.Empty;
 
         [ForeignKey("Address")]
-        public Address? PatientAddress { get; set; }
-        public ICollection<MedicalRecord>? MedicalRecords { get; set; }
-        public ICollection<PatientDrugPrescription>? DrugTreatments { get; set; }
-        public ICollection<PatientVitals>? Vitals { get; set; }
-        public ICollection<Appointment>? DoctorAppointments { get; set; }
+        public virtual Address? PatientAddress { get; set; }
+        public virtual ICollection<MedicalRecord>? MedicalRecords { get; set; }
+        public virtual ICollection<PatientDrugPrescription>? DrugTreatments { get; set; }
+        public virtual ICollection<PatientVitals>? Vitals { get; set; }
+        public virtual ICollection<Appointment>? DoctorAppointments { get; set; }
 
         [ForeignKey(nameof(PatientInBed))]
         public Guid PatientInBedId {  get; set; }
-        public PatientInBed? BedAssignment { get; set; }
+        public virtual PatientInBed? BedAssignment { get; set; }
     }
 }

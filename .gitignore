@@ -397,3 +397,8 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 /EHR365.Domain/Entities/PatientDrugTreatment.cs
+/EHR365.Application/DataTransferObjects/AddressDTO.cs
+EHR365.Application/DataTransferObjects/HospitalDto.cs
+EHR365.Application/DataTransferObjects/AddressDTO.cs
+/EHR365.Application/DataTransferObjects/AddressDTO.cs
+/EHR365.Application/DataTransferObjects/HospitalDto.cs

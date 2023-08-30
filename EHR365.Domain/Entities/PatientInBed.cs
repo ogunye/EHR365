@@ -12,6 +12,6 @@ namespace EHR365.Domain.Entities
 
         [ForeignKey("Bed")]
         public int BedId { get; set; }
-        public BedInWard? Bed { get; set; }
+        public virtual BedInWard? Bed { get; set; }
     }
 }

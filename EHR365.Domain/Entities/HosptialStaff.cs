@@ -12,7 +12,7 @@ namespace EHR365.Domain.Entities
         [ForeignKey(nameof(Hospital))]
         public Guid HospitalId { get; set; }
 
-        public Hospital? Hospital { get; set; }
+        public virtual Hospital? Hospital { get; set; }
 
         [Required(ErrorMessage ="First Name is a required field.")]
         [MaxLength(30, ErrorMessage ="Maximum length of First Name is 30.")]
@@ -35,7 +35,7 @@ namespace EHR365.Domain.Entities
         [MaxLength(100, ErrorMessage ="Maximum length for Email is 100 characters.")]
         public string Email { get; set; } = string.Empty;
 
-        public Address? StaffAddress { get; set; }
+        public virtual Address? StaffAddress { get; set; }
         public ICollection<Appointment>? PatientAppointments { get; set; }
     }
 }

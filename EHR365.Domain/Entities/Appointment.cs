@@ -13,11 +13,11 @@ namespace EHR365.Domain.Entities
     {
         [ForeignKey(nameof(Patient))]
         public Guid PatientId { get; set; }
-        public Patient? Patient { get; set; }
+        public virtual Patient? Patient { get; set; }
 
         [ForeignKey(nameof(Hospital))]
         public Guid HospitalId { get; set; }
-        public Hospital? Hospital { get; set; }
+        public virtual Hospital? Hospital { get; set; }
 
         [Required(ErrorMessage = "AppointmentWith is a required field.")]
         [MaxLength(50, ErrorMessage = "Maximum length for AppointmentWith is 50")]

@@ -8,11 +8,11 @@ namespace EHR365.Domain.Entities
     {
         [ForeignKey(nameof(Patient))]
         public Guid PatientId { get; set; }
-        public Patient? Patient { get; set; }
+        public virtual Patient? Patient { get; set; }
 
         [ForeignKey(nameof(Hospital))]
         public Guid  HospitalId { get; set; }
-        public Hospital? Hospital { get; set; }
+        public virtual Hospital? Hospital { get; set; }
 
         [Required(ErrorMessage = "Procedure Name is a required field.")]
         [MaxLength(100, ErrorMessage = "Maximum length for Procedure Name is 100 character.")]

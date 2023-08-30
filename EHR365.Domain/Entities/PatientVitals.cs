@@ -13,7 +13,7 @@ namespace EHR365.Domain.Entities
     {
         [ForeignKey(nameof(Patient))]
         public Guid PatientId { get; set; }
-        public Patient? Patient { get; set; }   
+        public virtual Patient? Patient { get; set; }   
 
         public DateTime? RecordCreated { get; set; } = DateTime.Now;
         public int? HeartRate { get; set; }

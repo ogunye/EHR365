@@ -9,7 +9,7 @@ namespace EHR365.Domain.Entities
 
         [ForeignKey(nameof(Hospital))]
         public Guid HosptialId { get; set; }
-        public Hospital? Hospital { get; set; }
+        public virtual Hospital? Hospital { get; set; }
 
         public List<BedInWard>? Beds { get; set; }
     }
